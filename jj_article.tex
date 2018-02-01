@@ -59,14 +59,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author[
-   addressref={uams},                   % id's of addresses, e.g. {aff1,aff2}
-   corref={uams},                       % id of corresponding address, if any
-   email={jane.e.doe@cambridge.co.uk}   % email address
+addressref={aff1},
 ]{\inits{JJ}\fnm{John} \snm{Judkins}}
 \author[
-   addressref={uams,aff2},
-   email={john.RS.Smith@cambridge.co.uk}
-]{\inits{JRS}\fnm{John RS} \snm{Smith}}
+addressref={aff2},
+]{\inits{JS}\fnm{Jessica} \snm{Tay-Sontheimer}}
+\author[
+addressref={aff3},
+]{\inits{RB}\fnm{Richard D} \snm{Boyce}}
+\author[
+addressref={aff1},
+email={mbrochhausen@uams.edu}
+]{\inits{MB}\fnm{Mathias} \snm{Brochhausen}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -77,19 +81,20 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\address[id=uams]{%                           % unique id
-  \orgname{Department of Biomedical Informatics, University of Arkansas for Medical Sciences}, % university, etc
-  %\street{Waterloo Road},                     %
-  %\postcode{}                                % post or zip code
-  \city{Little Rock},                              % city
-  \cny{USA}                                    % country
+\address[id=aff1]{
+\orgname{Department of Biomedical Informatics, University of Arkansas for Medical Sciences},
+\city{Little Rock, AR},
+\cny{USA}
 }
-\address[id=aff2]{%
-  \orgname{Marine Ecology Department, Institute of Marine Sciences Kiel},
-  \street{D\"{u}sternbrooker Weg 20},
-  \postcode{24105}
-  \city{Kiel},
-  \cny{Germany}
+\address[id=aff2]{
+\orgname{School of Pharmacy, University of Washington},
+\city{Seattle, WA},
+\cny{USA}
+}
+\address[id=aff3]{
+\orgname{Department of Biomedical Informatics, University of Pittsburgh},
+\city{Pittsburgh, PA},
+\cny{USA}
 }
 
 \end{fmbox}% comment this for two column layout
@@ -193,7 +198,7 @@ According to OWL, if A and B are subclasses, each member of A is also a member o
 It is not true that all members of the class \textit{all-purpose\_flour} are members of \textit{sourdough}.
 In  conclusion, we do not think that uc\_FIDO provides sufficiently rigorous and rich semantics for our project.
 
-Since there are a number of similarities between pharmacokinetic drug-drug interactions and PK-NPDIs, we turned to the Drug-drug Interaction and Drug-Drug Interaction Evidence Ontology (DIDEO) \cite{dideo_owl} that provides terms and definitions relevant to the knowledge and evidence of potential drug-drug interactions \cite{Brochhausen}.
+Since there are a number of similarities between pharmacokinetic drug-drug interactions and PK-NPDIs, we turned to the Drug-drug Interaction and Drug-Drug Interaction Evidence Ontology (DIDEO) \cite{dideoowl} that provides terms and definitions relevant to the knowledge and evidence of potential drug-drug interactions \cite{Brochhausen}.
 DIDEO is coded in the Web Ontology Language (OWL2) and conforms to OBO Foundry principles \cite{obofoundry}, which were created to promote an environment of open availability, interoperability and reusability among ontologies for biosciences.
 DIDEO is undergoing active development. Each new class added to it is given a unique and specific definition; comments and examples are also often given in order to provide further information.
 Based on existing overlap and the rich semantics of DIDEO, we decided to extend DIDEO to include definitions for all terms used by the new PK-NPDI repository. In this paper, we report the state of the development and our methods to represent the domain of NPDI, including the review of ontologies potentially relevant to the field.
@@ -352,7 +357,7 @@ We have also shown that DIDEO provides a sound foundation on which to achieve ou
 We have also demonstrated the novelty of this project in that, while both a NP ontology and a food-drug interaction ontology exist, they do not meet the project's requirements for complete textual definitions and rich semantics.
 Moreover, ours is the only project to build an ontology for NPDIs with formally-defined terms.
 We maintain this extension to DIDEO as an ongoing, open and community-driven effort.
-Plans are also underway to implement a website to faciliate further review of the user-centered descriptions by a larger group of domain experts as we continue adding to the ontology.
+Plans are also underway to implement a website to facilitate further review of the user-centered descriptions by a larger group of domain experts as we continue adding to the ontology.
 This will further ensure no remaining ambiguity in definitions for researchers using the ontology and repository. % I added a bit here --JJ
 Discussions and comments are welcome at the project's GitHub site [\url{https://github.com/DIDEO/DIDEO}] or on the Drug Interaction Knowledge Base forum public forum [\url{https://forums.dikb.org/}]
 
@@ -365,7 +370,11 @@ Discussions and comments are welcome at the project's GitHub site [\url{https://
 \begin{backmatter}
 
 \section*{Author's contributions}
-    Text for this section \ldots
+RB and JS contributed terms, definitions and other information from the PK-NDPI domain and provided this information in the DIDEO-NPDI working document that was shared with all authors.
+RB and MB arranged the system of iterative review in which JJ and JS participated.
+JJ contributed terms, definitions, axioms and other annotations to DIDEO.
+MB also provided feedback on definitions and axiom creation.
+All authors contributed to the writing and review of this manuscript.
 
 \section*{Acknowledgements}
 This project is supported in part by grants from the NCCIH (U54 AT008909) and the National Library of Medicine: “Addressing gaps in clinically useful evidence on drug-drug interactions” (R01LM011838).
